@@ -1,20 +1,20 @@
 import { Link} from "react-router-dom";
-
+import '../styles/header.css';
 function Header(){
     return(
-        <header>
+        <header className="header">
             <div className="container">
                 <div className="header-row d-flex justify-content-lg-between">
                     <div className="socical-icon">
-                        <Link to="/">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            <i class="fa-brands fa-facebook-f"></i>
+                        <Link className="social-icon si-rounded si-dark si-mini" to="/">
+                            <i className="fa-brands fa-facebook-f"></i>
+                            <i className="fa-brands fa-facebook-f"></i>
                         </Link>
-                        <Link to="/">
+                        <Link className="social-icon si-rounded si-dark si-mini" to="/">
                             <i className="fa-brands fa-twitter"></i>
                             <i className="fa-brands fa-twitter"></i>
                         </Link>
-                        <Link to="/">
+                        <Link className="social-icon si-rounded si-dark si-mini" to="/">
                             <i className="fa-brands fa-instagram"></i>
                             <i className="fa-brands fa-instagram"></i>
                         </Link>

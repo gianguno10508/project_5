@@ -1,0 +1,39 @@
+.header a{
+    text-decoration: none;
+}
+.header .social-icon.si-mini{
+    width: 28px;
+    height: 28px;
+    font-size: .75rem;
+    line-height: 28px;
+    margin-bottom: 0;
+} 
+.header .si-dark{
+    background-color: #444;
+    color: #fff!important;
+    border-color: transparent;
+}
+.header .si-rounded{
+    border-radius: 50%;
+}
+.header .social-icon{
+    margin: 0 5px 5px 0;
+    text-shadow: none;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    text-align: center!important;
+    float: left;
+    cursor: pointer;
+    font-style: normal;
+}
+.header .social-icon i{
+    display: block;
+    position: relative;
+}
+.header .social-icon i:first-child{
+    top: 27%;
+}
+.header .social-icon i:last-child{
+    color: #fff!important;
+    bottom: -15px;
+}
