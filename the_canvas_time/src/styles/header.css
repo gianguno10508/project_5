@@ -17,6 +17,10 @@ body{
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
     color: #666;
 }
+.b-bottom{
+    border-bottom: 1px solid #e5e5e5;
+}
+
 
 .header {
     background: #fff;

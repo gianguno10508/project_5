@@ -19,6 +19,18 @@ function Header(props){
     const m = new Date();
     let month = monthNames[m.getMonth()];
 
+    const [border, setBorder] = useState(null);
+
+    const toggleVisible = () => {
+      const scrolled = document.documentElement.scrollTop;
+      if (scrolled > 150){
+        setBorder('b-bottom');
+      } 
+      else if (scrolled <= 150){
+        setBorder(null);
+      }
+    };
+    window.addEventListener('scroll', toggleVisible);
 
     const [bgDark, setBgDark] = useState(null);
     const [darkMode, setDarkMode] = useState('disblock');
@@ -108,7 +120,7 @@ function Header(props){
     };
     const ref = useOutsideClickSearch(handleClickOutside);
     return(
-        <header className={`header sticky-top ${bgDark}`}>
+        <header className={`header sticky-top ${bgDark} ${border}`}>
             <div className="container">
                 <div className="header-row d-flex justify-content-lg-between">
                     <div className="socical-icon col-lg-3 d-md-flex px-0 align-items-center">

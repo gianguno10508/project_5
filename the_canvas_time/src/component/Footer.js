@@ -20,22 +20,26 @@ function Footer(props){
             setColorLessWhite(null);
         }
     }, [props.darkmode]);
-    $(document).ready(function(){
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 50) {
-                    $('#back-to-top').fadeIn();
-                } else {
-                    $('#back-to-top').fadeOut();
-                }
-            });
-                // scroll body to 0px on click
-            $('#back-to-top').click(function () {
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 400);
-                return false;
-            });
-    });
+    const [visible, setVisible] = useState(false);
+    const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+          if (scrolled > 300){
+            setVisible(true)
+          } 
+          else if (scrolled <= 300){
+            setVisible(false)
+          }
+        };
+        
+        const scrollToTop = () =>{
+          window.scrollTo({
+            top: 0, 
+            behavior: 'smooth'
+            /* you can also use 'auto' behaviour
+               in place of 'smooth' */
+          });
+        };
+        window.addEventListener('scroll', toggleVisible);
     return(
         <footer className={`footer ${bgDark}`}>
             <div className="container">
@@ -145,7 +149,7 @@ function Footer(props){
                     </div>
                 </div>
             </div>
-            <div id="gotoTop" class="icon-angle-up rounded-circle"></div>
+            <div id="gotoTop" onClick={scrollToTop} style={{display: visible ? 'inline' : 'none'}}  class="icon-angle-up rounded-circle"></div>
         </footer>
     );
 }
