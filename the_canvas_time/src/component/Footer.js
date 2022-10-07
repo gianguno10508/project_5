@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import '../styles/footer.css';
+import $ from 'jquery';
 function Footer(props){
     const [bgDark, setBgDark] = useState(null);
     const [bgLessDark, setBgLessDark] = useState(null);
@@ -19,6 +20,22 @@ function Footer(props){
             setColorLessWhite(null);
         }
     }, [props.darkmode]);
+    $(document).ready(function(){
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+                // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });
+    });
     return(
         <footer className={`footer ${bgDark}`}>
             <div className="container">
@@ -128,6 +145,7 @@ function Footer(props){
                     </div>
                 </div>
             </div>
+            <div id="gotoTop" class="icon-angle-up rounded-circle"></div>
         </footer>
     );
 }
