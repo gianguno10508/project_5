@@ -20,6 +20,7 @@ function Footer(props){
             setColorLessWhite(null);
         }
     }, [props.darkmode]);
+    
     const [visible, setVisible] = useState(false);
     const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
