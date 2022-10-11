@@ -3,7 +3,7 @@
 }
 
 .home {
-    /* padding: 50px 0; */
+    padding: 50px 0;
     z-index: 2;
 }
 
@@ -135,13 +135,13 @@
     border-radius: 50px;
 }
 
-/* / spotlight / .spotlight {
+.spotlight {
     width: 100%;
     background-color: #010101;
     margin: 60px 0;
     padding: 60px 0;
     color: #fff;
-} */
+}
 
 #sl {
     margin-bottom: 30px;
@@ -159,10 +159,10 @@
     background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
 }
 
-/* / / .readingHistory {
+.readingHistory {
     border-right: 1px solid rgba(170, 170, 170, 0.281);
     padding-right: 30px;
-} */
+}
 
 #rhh3 {
     font-size: 24px;
@@ -193,11 +193,11 @@
     transition: all 0.3s;
 }
 
-/* / / .theWeek {
+.theWeek {
     position: sticky !important;
     height: 100% !important;
     top: 234px;
-} */
+}
 
 #rhh4 {
     padding-left: 20px;
@@ -248,13 +248,13 @@
     height: auto !important;
 }
 
-/* / / .bannerHome {
+.bannerHome {
     width: 100%;
     margin: 60px 0;
     padding: 60px 0;
     background-color: #f9f9f9;
     overflow: hidden;
-} */
+}
 
 .ad-bannerHome {
     text-align: center;

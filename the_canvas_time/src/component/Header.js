@@ -119,6 +119,43 @@ function Header(props) {
         }
     };
     const ref = useOutsideClickSearch(handleClickOutside);
+
+    // +++showMenu+++
+    const [showMenu, setShowMenu] = useState(null);
+    const handleItemClickMenu = (event) => {
+        if (showDropdown == 'show') {
+            setShowMenu('disnone');
+        } else {
+            setShowMenu('show');
+            event.stopPropagation();
+        }
+    };
+
+    const useOutsideClickMenu = (callback) => {
+        const refdrm = useRef();
+
+        useEffect(() => {
+            const handleItemClickMenu = (event) => {
+                if (refdrm.current && !refdrm.current.contains(event.target)) {
+                    callback();
+                }
+            };
+
+            document.addEventListener('click', handleItemClickMenu);
+
+            return () => {
+                document.removeEventListener('click', handleItemClickMenu);
+            };
+        }, [refdrm]);
+
+        return refdrm;
+    };
+    const handleClickOutsideMenu = () => {
+        setShowMenu('disnone');
+    };
+    const refdrmenu = useOutsideClickMenu(handleClickOutsideMenu);
+
+
     return (
         <header className={`header sticky-top ${bgDark} ${border}`}>
             <div className="container">
@@ -176,10 +213,12 @@ function Header(props) {
                 <div className="menu">
                     <nav className="navbar navbar-expand-lg">
                         <div className="container-fluid">
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <button className="navbar-toggler" type="button" onClick={(event) => handleItemClickMenu(event)} data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                                aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
-                            <div className="justify-content-lg-center collapse navbar-collapse" id="navbarNav">
+                            <div ref={refdrmenu} className={`justify-content-lg-center collapse navbar-collapse ${showMenu}`} id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
                                         <Link to='/' className={`nav-link ${colorWhite}`} href="#"><div>Home</div></Link>
