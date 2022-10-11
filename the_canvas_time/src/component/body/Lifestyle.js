@@ -71,7 +71,8 @@ function Lifestyle(props) {
     const [menuItems, setMenuItems] = useState(data);
     const [categories, setCategories] = useState(allCategories);
 
-    const filterItems = (category) => {
+    const filterItems = (e,category) => {
+        e.preventDefault();
         if (category === "all") {
             return setMenuItems(data);
         }
@@ -82,9 +83,23 @@ function Lifestyle(props) {
     // ++++Search+++
     const [searchItem, setsearchItem] = useState("");
     const onChange = (event) => {
-        setsearchItem(event.target.value);
+        // setsearchItem(event.target.value);
+        const newItems = [];
+        if(event.target.value.length > 0){
+            data.filter((item) => {
+                const searchValue = event.target.value.toLowerCase();
+                const searchData = item.name.toLowerCase();
+                return (searchValue && searchData.startsWith(searchValue) && searchData !== searchValue);
+                    
+            }).map((item,index)=>{
+                newItems[index] = item;
+            });
+            setMenuItems(newItems);
+        }else{
+            setMenuItems(data);
+        }
     }
-    const onSearch = (searchTerm) => {
+    const onSearch = (e,searchTerm) => {
         setsearchItem(searchTerm);
         console.log(searchTerm);
     }
@@ -107,26 +122,25 @@ function Lifestyle(props) {
                     <div className='container'>
                         {/* +++LIST+++ */}
                         <div className='row'>
-                            <div className='col-3 cat-widgets position-sticky h-100'>
-                                <div className=" cat-widgets position-sticky h-100">
+                            <div className='col-3 sticky-top-cate cat-widgets h-100'>
+                                <div className="cat-widgets h-100">
                                     <div className="lifestyle-widget-search">
                                         <form className={`input-group ${bgDarkLifeStyle}`}>
                                             <input className={`form-control ${bgDarkLifeStyle}`} type="search" placeholder="Search" aria-label="Search"
-                                                value={searchItem} onChange={onChange}
+                                            onChange={onChange}
                                             />
-                                            <Link to='/detail'><button onClick={() => onSearch(searchItem)} className={`btn btn-outline-secondary ${bgDarkLifeStyle} `} type="button"><i className="fa-solid fa-magnifying-glass"></i></button></Link>
                                         </form>
                                     </div>
                                     <div className="lifestyle-widget-nav  mt-md-5">
                                         <ul className="nav">
                                             {categories.map((cate, index) => (
                                                 <li className="nav-item " key={index}>
-                                                    <a className={`nav-link ${bgDarkLifeStyle}`} href="#" onClick={() => filterItems(cate)}>{cate}</a>
+                                                    <a className={`nav-link ${bgDarkLifeStyle}`} href="#" onClick={(e) => filterItems(e,cate)}>{cate}</a>
                                                 </li>
                                             ))}
 
                                         </ul>
-                                        <div ref={refdropdown} className="show-item-search">
+                                        {/* <div ref={refdropdown} className="show-item-search">
                                             {data
                                                 .filter((item) => {
                                                     const searchTerm = searchItem.toLowerCase();
@@ -146,7 +160,7 @@ function Lifestyle(props) {
                                                 ))}
 
 
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +181,8 @@ function Lifestyle(props) {
                                     </div>
                                 </div>
                                 <div className='row col-mb-50 posts-md'>
-                                    {menuItems.map((item) => (
+                                    {menuItems.length > 0 ? 
+                                    menuItems.map((item) => (
                                         <div className='col-md-4' key={item.id}>
                                             <div className='lifestyle-item'>
                                                 <Link to='/detail'><img src={item.img} alt='' className='img-lifestyle'></img></Link>
@@ -188,9 +203,8 @@ function Lifestyle(props) {
                                                 </div>
                                             </div>
                                         </div>
-                                    ))}
-
-
+                                    )) : 
+                                    <h3>Sorry, We don't have your search blog</h3>}
                                 </div>
                             </div>
                         </div>
