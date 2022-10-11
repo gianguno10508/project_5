@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import '../styles/footer.css';
-import $ from 'jquery';
 function Footer(props){
     const [bgDark, setBgDark] = useState(null);
     const [bgLessDark, setBgLessDark] = useState(null);
