@@ -313,6 +313,10 @@
     margin-bottom: 30px;
 }
 
+.bg-dark-mode-lifestyle .more-link {
+    color: #eee !important;
+}
+
 .lifestyle-content-list .more-link {
     font-style: normal;
     border-bottom: none;

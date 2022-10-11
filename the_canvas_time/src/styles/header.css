@@ -1,23 +1,31 @@
-body{
+body {
     font-family: 'Domine', serif;
 }
 
-.disnone{
+.disnone {
     display: none !important;
 }
-.disblock{
+
+.disblock {
     display: block !important;
 }
-.bg-dark-mode{
+
+.bg-dark-mode {
     background-color: #111 !important;
 }
-.color-white{
+
+.color-white {
     color: #fff !important;
 }
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
     color: #666;
 }
-.b-bottom{
+
+.b-bottom {
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -25,88 +33,103 @@ body{
 .header {
     background: #fff;
 }
-.header a{
+
+.header a {
     text-decoration: none;
 }
+
 /* a little fix responsive */
-.header .header-row{
+.header .header-row {
     padding-top: 15px;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
+
 /*  */
-.header .social-icon.si-mini{
+.header .social-icon.si-mini {
     width: 28px;
     height: 28px;
     font-size: .75rem;
     line-height: 28px;
     margin-bottom: 0;
-} 
-.header .si-dark{
+}
+
+.header .si-dark {
     background-color: #444;
-    color: #fff!important;
+    color: #fff !important;
     border-color: transparent;
 }
-.header .si-rounded{
+
+.header .si-rounded {
     border-radius: 50%;
 }
-.header .social-icon{
+
+.header .social-icon {
     margin: 0 5px 5px 0;
     text-shadow: none;
     /* border: 1px solid #aaa; */
     overflow: hidden;
-    text-align: center!important;
+    text-align: center !important;
     float: left;
     cursor: pointer;
     font-style: normal;
 }
-.header .social-icon i{
+
+.header .social-icon i {
     display: block;
     position: relative;
 }
-.header .social-icon i:first-child{
+
+.header .social-icon i:first-child {
     top: 27%;
     transition: all .3s ease;
 }
-.header .social-icon i:last-child{
-    color: #fff!important;
+
+.header .social-icon i:last-child {
+    color: #fff !important;
     bottom: -20px;
     transition: all .3s ease;
 }
-.header .si-facebook:hover{
-    background-color: #3b5998!important;
+
+.header .si-facebook:hover {
+    background-color: #3b5998 !important;
 }
 
-.header .si-insta:hover{
-    background-color: #8a3ab9!important;
+.header .si-insta:hover {
+    background-color: #8a3ab9 !important;
 }
-.header .si-twitter:hover{
-    background-color: #00acee!important;
+
+.header .si-twitter:hover {
+    background-color: #00acee !important;
 }
+
 .header .si-facebook:hover i:first-child,
 .header .si-twitter:hover i:first-child,
-.header .si-insta:hover i:first-child{
+.header .si-insta:hover i:first-child {
     top: -27px;
     transition: all .3s ease;
 }
+
 .header .si-facebook:hover i:last-child,
 .header .si-twitter:hover i:last-child,
-.header .si-insta:hover i:last-child{
+.header .si-insta:hover i:last-child {
     bottom: 5px;
     transition: all .3s ease;
 }
 
-.header a.standard-logo{
+.header a.standard-logo {
     font-size: 40px;
     color: #000;
     font-weight: 300;
     font-family: 'Segoe UI';
 }
-.header a.standard-logo span.logo-name{
+
+.header a.standard-logo span.logo-name {
     font-weight: 700;
 }
-.header .logo .date-today{
+
+.header .logo .date-today {
     position: relative;
     margin-top: -1.25rem;
     margin-bottom: 1.5rem;
@@ -117,13 +140,15 @@ body{
     color: #e5e5e5;
     width: 70%;
 }
-.header .date-today .today-text{
+
+.header .date-today .today-text {
     color: #777;
-    font-size: .875rem!important;
+    font-size: .875rem !important;
     line-height: 1.3;
 }
+
 .header .date-today::after,
-.header .date-today::before{
+.header .date-today::before {
     content: '';
     flex-grow: 1;
     max-width: 100%;
@@ -131,53 +156,63 @@ body{
     height: 0;
     border-top: 4px double #ddd;
 }
-.header .header-misc img{
+
+.header .header-misc img {
     margin-right: 3px;
     width: 18px;
     height: 18px;
 }
-.header .header-misc .top-search{
+
+.header .header-misc .top-search {
     margin: 0 8px;
     position: relative;
 }
-.header .header-misc .top-search .search-box{
+
+.header .header-misc .top-search .search-box {
     position: absolute;
     display: block;
     left: -175px;
     top: 35px;
     transition: all .3s ease;
 }
-.header .header-misc .top-search .search-box input[type="text"]{
+
+.header .header-misc .top-search .search-box input[type="text"] {
     width: 300px;
     padding: 5px 20px;
     background-color: transparent;
 }
-.header .header-misc .dark-mode{
+
+.header .header-misc .dark-mode {
     position: relative;
 }
+
 .header .header-misc .dark-mode .white-icon,
-.header .header-misc .dark-mode .dark-icon{
+.header .header-misc .dark-mode .dark-icon {
     position: absolute;
     top: -10px;
     left: 0;
 }
 
 .header .header-misc .top-search i,
-.header .header-misc .dark-mode i{
+.header .header-misc .dark-mode i {
     cursor: pointer;
     font-size: 18px;
 }
 
-.header .menu #navbarNav ul li{
+.header .menu #navbarNav ul li {
     padding-right: 50px;
 }
-.header .menu #navbarNav ul li a{
+
+.header .menu #navbarNav ul li a {
     color: #222;
 }
-.header .menu #navbarNav ul li a>div{
+
+.header .menu #navbarNav ul li a>div {
     position: relative;
 }
-.header .menu #navbarNav ul li a>div::after{
+
+
+.header .menu #navbarNav ul li a>div::after {
     content: " ";
     width: 0%;
     height: 4px;
@@ -187,17 +222,40 @@ body{
     top: 100%;
     left: 0;
 }
-.header .menu #navbarNav ul li a:hover>div::after{
+
+.header .menu #navbarNav ul li a:hover>div::after {
     width: 100%;
 }
-.header .menu{
+
+.header .menu {
     margin-top: 50px;
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
     padding: 10px 0;
 }
-@media only screen and (max-width:576px){
-    .header-row{
+
+@media only screen and (max-width:992px) {
+    .header .menu #navbarNav ul li a {
+        text-transform: uppercase;
+    }
+
+    .header .menu #navbarNav ul li a:hover {
+        color: #F39887;
+    }
+
+    .header .menu #navbarNav ul li a:hover>div::after {
+        width: 10%;
+
+    }
+
+    .header .menu #navbarNav ul li a>div::after {
+        top: 100%;
+        left: 45%;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .header-row {
         flex-flow: column;
     }
 }
