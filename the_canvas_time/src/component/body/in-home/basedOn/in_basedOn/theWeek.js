@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { EmbeddedPost, FacebookProvider, Like } from 'react-facebook';
 function TheWeek(){
     const data=[
         {
@@ -55,7 +55,9 @@ function TheWeek(){
             <div className='ad row'>
                 <h3 id='rhh3'>Ad</h3>
                 <div className='col-12'>
-                    <iframe src='https://www.facebook.com/semicolonweb/photos/a.1218538191515522/2855299231172735/?type=3'></iframe>
+                    <FacebookProvider appId="1962804053924433">
+                        <EmbeddedPost href="https://www.facebook.com/SieuSaoNhatBong/photos/a.102341032480946/158649313516784/" width="200" />
+                    </FacebookProvider>
                 </div>
             </div>
         </div>

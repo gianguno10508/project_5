@@ -10,6 +10,7 @@ import LatesVideo from './in-home/lates_video';
 import OutsandingHome from './in-home/outsanding_home';
 import SpotLight from './in-home/spotlight';
 import BasedOn from './in-home/basedOn/basedOn'
+import BannerHome from './in-home/bannerHome';
 function Home(){
     return(
         <div className='home'>
@@ -23,8 +24,9 @@ function Home(){
                     <LatesVideo />
                 </AnimationOnScroll>
             </div>
-            <SpotLight/>
+            <SpotLight />
             <BasedOn />
+            <BannerHome />.
         </div>
     );
 }

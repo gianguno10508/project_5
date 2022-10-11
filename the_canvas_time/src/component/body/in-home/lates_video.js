@@ -44,8 +44,8 @@ function LatesVideo(props){
             </div>
             <div className='lastes_item row posts-md'>
                 {data.map((value,i)=>(
-                    <div className='col-lg-4 col-sm-6' key={i}>
-                        <div className='post_entry text-start'>
+                    <div className=' col-lg-4 col-sm-6' key={i}>
+                        <div className=' post_entry text-start'>
                             <div className='post_entry_img'>
                                 <ReactPlayer
                                     url={value.img}
@@ -61,12 +61,12 @@ function LatesVideo(props){
                                     Watch
                                 </div> */}
                             </div>
-                            <div className='post_entry_title'>
+                            <div className=' post_entry_title'>
                                 <div className='post_entry_cate'>
                                     <a href='#2' className={`${colorWhite}`}>{value.cateP}</a>
                                 </div>
                                 <h3>
-                                    <a href="#s" className={`color-underline stretched-link ${colorWhite}`}>{value.name}</a>
+                                    <a href="#s" className={`color-underline ${colorWhite}`}>{value.name}</a>
                                 </h3> 
                             </div>
                             <div className='post_entry_time'>
