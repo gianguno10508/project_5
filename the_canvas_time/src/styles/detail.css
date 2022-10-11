@@ -23,6 +23,11 @@
 .detail img{
     width: 100%;
 }
+.sticky-top-cate{
+    position: sticky;
+    top: 30%;
+    z-index: 100;
+}
 .rounded {
     border-radius: 0.25rem!important;
 }
