@@ -89,7 +89,7 @@ function Lifestyle(props) {
         console.log(searchTerm);
     }
     return (
-        <div className={`lifestyle-list ${bgDarkLifeStyle}`}>
+        <div className={`${bgDarkLifeStyle} lifestyle-list `}>
             {/* +++FISTtitle++ */}
             <div className={`lifestyle-title ${bgLessDarkLifeStyle} ${boderDarkLifeStyle}`} >
                 <div className='container'>
