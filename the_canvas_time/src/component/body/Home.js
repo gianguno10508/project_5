@@ -8,6 +8,7 @@ import HighLightHome from './in-home/highliight-home';
 import NewLetter from './in-home/newLetter';
 import LatesVideo from './in-home/lates_video';
 import { connect } from 'react-redux';
+import PostEndHome from './in-home/postEndHome';
 function Home(props) {
     console.log(props);
     const [bgDarkHome, setbgDarkHome] = useState(null);
@@ -54,6 +55,7 @@ function Home(props) {
                 <AnimationOnScroll animateIn="animate__bounceIn">
                     <LatesVideo />
                 </AnimationOnScroll>
+                <PostEndHome bgDarkHome={bgDarkHome} />
             </div>
 
         </div>
