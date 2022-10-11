@@ -9,6 +9,10 @@ import NewLetter from './in-home/newLetter';
 import LatesVideo from './in-home/lates_video';
 import { connect } from 'react-redux';
 import PostEndHome from './in-home/postEndHome';
+import OutsandingHome from './in-home/outsanding_home';
+import SpotLight from './in-home/spotlight';
+import BasedOn from './in-home/basedOn/basedOn'
+import BannerHome from './in-home/bannerHome';
 function Home(props) {
     console.log(props);
     const [bgDarkHome, setbgDarkHome] = useState(null);
@@ -26,6 +30,8 @@ function Home(props) {
         <div className={` ${bgDarkHome} home `}>
             <div className='container'>
                 <div className='row'>
+                    <OutsandingHome />
+                    <HighLightHome />
                     <div className='col-lg-7 mb-5 mb-lg-0'>
                         <div className='article'>
                             <div className='post_entry text-start'>
@@ -57,7 +63,9 @@ function Home(props) {
                 </AnimationOnScroll>
                 <PostEndHome bgDarkHome={bgDarkHome} />
             </div>
-
+            <SpotLight />
+            <BasedOn />
+            <BannerHome />.
         </div>
     );
 }

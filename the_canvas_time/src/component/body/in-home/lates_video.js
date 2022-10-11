@@ -42,27 +42,31 @@ function LatesVideo(props){
                 <h3 className={`mb-0 ${colorWhite}`}>Latest Videos</h3>
                 <button className='btn btn-sm btn-outline-secondary'>More Content <i class="far fa-arrow-right"></i></button>
             </div>
-            <div className='row posts-md'>
+            <div className='lastes_item row posts-md'>
                 {data.map((value,i)=>(
-                    <div className='col-lg-4 col-sm-6' key={i}>
-                        <div className='post_entry text-start'>
+                    <div className=' col-lg-4 col-sm-6' key={i}>
+                        <div className=' post_entry text-start'>
                             <div className='post_entry_img'>
                                 <ReactPlayer
                                     url={value.img}
                                     width="auto"
-                                    height="auto"
+                                    height="230px"
                                     playing={true}
                                     controls={true}
                                     light={true}
                                     pip={true} 
                                 />
+                                {/* <div className='play-icon'>
+                                    <i class="far fa-play-circle"></i>
+                                    Watch
+                                </div> */}
                             </div>
-                            <div className='post_entry_title'>
+                            <div className=' post_entry_title'>
                                 <div className='post_entry_cate'>
                                     <a href='#2' className={`${colorWhite}`}>{value.cateP}</a>
                                 </div>
                                 <h3>
-                                    <a href="#s" className={`color-underline stretched-link ${colorWhite}`}>{value.name}</a>
+                                    <a href="#s" className={`color-underline ${colorWhite}`}>{value.name}</a>
                                 </h3> 
                             </div>
                             <div className='post_entry_time'>
