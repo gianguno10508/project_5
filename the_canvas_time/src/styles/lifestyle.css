@@ -121,7 +121,7 @@
     line-height: 1.8;
     font-size: 16px;
     color: #444;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .lifestyle-widget-nav a.nav-link.bg-dark-mode-lifestyle {
@@ -137,6 +137,18 @@
 .lifestyle-widget-nav a.nav-link.bg-dark-mode-lifestyle:hover {
     border-left-color: #F39887 !important;
     color: #F39887 !important;
+}
+
+
+.show-item-search {
+    position: absolute;
+    top: 0%;
+    background-color: #ecf2f4;
+    width: 100%;
+}
+
+.item-show {
+    margin-top: 20px;
 }
 
 /* +++LEFT+++ */
@@ -372,10 +384,16 @@
 
     .lifestyle-widget-nav .nav .nav-link {
         border-left: none;
+        padding: 8px 16px;
     }
 
     .lifestyle-content-list .col-9 {
         width: 100%;
         margin-top: 80px;
+    }
+
+    .lifestyle-widget-search input.form-control.bg-dark-mode-lifestyle {
+        background-color: #eee !important;
+        color: #444 !important;
     }
 }

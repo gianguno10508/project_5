@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../styles/header.css';
 import EngFlag from '../img/eng_flag.png';
 import AraFlag from '../img/ara_flag.png';
@@ -7,10 +7,10 @@ import ThaFlag from '../img/tha_flag.png';
 import { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { actSelectDarkMode } from "../actions";
-function Header(props){
+function Header(props) {
     const current = new Date();
     const date = `${current.getDate()}`;
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const d = new Date();
     let day = weekday[d.getDay()];
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -22,13 +22,13 @@ function Header(props){
     const [border, setBorder] = useState(null);
 
     const toggleVisible = () => {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 150){
-        setBorder('b-bottom');
-      } 
-      else if (scrolled <= 150){
-        setBorder(null);
-      }
+        const scrolled = document.documentElement.scrollTop;
+        if (scrolled > 150) {
+            setBorder('b-bottom');
+        }
+        else if (scrolled <= 150) {
+            setBorder(null);
+        }
     };
     window.addEventListener('scroll', toggleVisible);
 
@@ -37,13 +37,13 @@ function Header(props){
     const [unDarkMode, setUnDarkMode] = useState('disnone');
     const [colorWhite, setColorWhite] = useState(null);
     const handleItemClick = (event) => {
-        if(darkMode == 'disblock' && unDarkMode=='disnone'){
+        if (darkMode == 'disblock' && unDarkMode == 'disnone') {
             setDarkMode('disnone');
             setUnDarkMode('disblock');
             setBgDark('bg-dark-mode');
             setColorWhite('color-white');
             props.setDarkMode('active dark mode');
-        }else{
+        } else {
             setDarkMode('disblock');
             setUnDarkMode('disnone');
             setBgDark(null);
@@ -54,31 +54,31 @@ function Header(props){
 
     const [showDropdown, setShowDropDown] = useState(null);
     const handleItemClickDropdown = (event) => {
-        if(showDropdown == 'show'){
+        if (showDropdown == 'show') {
             setShowDropDown('disnone');
-        }else{
+        } else {
             setShowDropDown('show');
             event.stopPropagation();
         }
     };
-    
+
     const useOutsideClick = (callback) => {
         const refdr = useRef();
 
         useEffect(() => {
-          const handleItemClickDropdown = (event) => {
-            if (refdr.current && !refdr.current.contains(event.target)) {
-              callback();
-            }
-          };
-      
-          document.addEventListener('click', handleItemClickDropdown);
-      
-          return () => {
-            document.removeEventListener('click', handleItemClickDropdown);
-          };
+            const handleItemClickDropdown = (event) => {
+                if (refdr.current && !refdr.current.contains(event.target)) {
+                    callback();
+                }
+            };
+
+            document.addEventListener('click', handleItemClickDropdown);
+
+            return () => {
+                document.removeEventListener('click', handleItemClickDropdown);
+            };
         }, [refdr]);
-      
+
         return refdr;
     };
     const handleClickOutsideDropdown = () => {
@@ -89,21 +89,21 @@ function Header(props){
 
     const useOutsideClickSearch = (callback) => {
         const ref = useRef();
-      
+
         useEffect(() => {
-          const handleItemClickSearch = (event) => {
-            if (ref.current && !ref.current.contains(event.target)) {
-              callback();
-            }
-          };
-      
-          document.addEventListener('click', handleItemClickSearch);
-      
-          return () => {
-            document.removeEventListener('click', handleItemClickSearch);
-          };
+            const handleItemClickSearch = (event) => {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    callback();
+                }
+            };
+
+            document.addEventListener('click', handleItemClickSearch);
+
+            return () => {
+                document.removeEventListener('click', handleItemClickSearch);
+            };
         }, [ref]);
-      
+
         return ref;
     };
     const handleClickOutside = () => {
@@ -111,15 +111,15 @@ function Header(props){
     };
     const [showSearch, setShowSearch] = useState('disnone');
     const handleItemClickSearch = (event) => {
-        if(showSearch == 'show'){
+        if (showSearch == 'show') {
             setShowSearch('disnone');
-        }else{
+        } else {
             setShowSearch('show');
             event.stopPropagation();
         }
     };
     const ref = useOutsideClickSearch(handleClickOutside);
-    return(
+    return (
         <header className={`header sticky-top ${bgDark} ${border}`}>
             <div className="container">
                 <div className="header-row d-flex justify-content-lg-between">
@@ -151,16 +151,16 @@ function Header(props){
                                 <img src={EngFlag} alt="English" />
                             </button>
                             <div ref={refdropdown} className={`dropdown-menu dropdown-menu-end ${showDropdown}`} aria-labelledby="dropdownMenuButton" data-popper-placement="bottom-end">
-                                <a href="#" className="dropdown-item"><img src={FreFlag} alt="Lang"/> French</a>
-                                <a href="#" className="dropdown-item"><img src={AraFlag} alt="Lang"/> Arabic</a>
-                                <a href="#" className="dropdown-item"><img src={ThaFlag} alt="Lang"/> Thailand</a>
-                                <a href="#" className="dropdown-item"><img src={EngFlag} alt="Lang"/> English</a>
+                                <a href="#" className="dropdown-item"><img src={FreFlag} alt="Lang" /> French</a>
+                                <a href="#" className="dropdown-item"><img src={AraFlag} alt="Lang" /> Arabic</a>
+                                <a href="#" className="dropdown-item"><img src={ThaFlag} alt="Lang" /> Thailand</a>
+                                <a href="#" className="dropdown-item"><img src={EngFlag} alt="Lang" /> English</a>
                             </div>
                         </div>
                         <div className={`top-search ${colorWhite}`} >
-                            <i class="fa-solid fa-magnifying-glass"  onClick={handleItemClickSearch}></i>
+                            <i class="fa-solid fa-magnifying-glass" onClick={handleItemClickSearch}></i>
                             <div ref={ref} className={`search-box ${showSearch}`}>
-                                <input type='text' placeholder="Search here..."/>
+                                <input type='text' placeholder="Search here..." />
                             </div>
                         </div>
                         <div className="dark-mode" onClick={(event) => handleItemClick(event)}>
@@ -182,7 +182,7 @@ function Header(props){
                             <div className="justify-content-lg-center collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <a className={`nav-link ${colorWhite}`} href="#"><div>Home</div></a>
+                                        <Link to='/' className={`nav-link ${colorWhite}`} href="#"><div>Home</div></Link>
                                     </li>
                                     <li className="nav-item">
                                         <a className={`nav-link ${colorWhite}`} href="#"><div>World</div></a>
@@ -191,7 +191,7 @@ function Header(props){
                                         <a className={`nav-link ${colorWhite}`} href="#"><div>Tech</div></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className={`nav-link ${colorWhite}`} href="#"><div>Lifestyle</div></a>
+                                        <Link to='/lifestyle' className={`nav-link ${colorWhite}`} href="#"><div>Lifestyle</div></Link>
                                     </li>
                                     <li className="nav-item">
                                         <a className={`nav-link ${colorWhite}`} href="#"><div>Business</div></a>
@@ -214,7 +214,7 @@ function Header(props){
         </header>
     );
 }
-  
+
 const mapDispatchToProps = (dispatch) => {
     return {
         setDarkMode: (data) => {
@@ -226,5 +226,5 @@ const mapStateToProps = (state, ownProps) => {
     return {
     };
 };
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(Header);  

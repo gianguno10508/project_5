@@ -4,15 +4,17 @@ import Footer from './component/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './component/body/Home';
 import Lifestyle from './component/body/Lifestyle';
+import Detail from './component/body/Detail';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Lifestyle />
-      {/* <Routes>
+      <Routes>
+        <Route path='/lifestyle' element={<Lifestyle />} />
         <Route path="/" element={<Home />} />
-      </Routes> */}
+        <Route path="/detail" element={<Detail />} />
+      </Routes>
       <Footer />
     </div>
   );

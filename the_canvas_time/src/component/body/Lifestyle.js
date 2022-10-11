@@ -3,6 +3,7 @@ import '../../styles/lifestyle.css';
 import img from '../../img/1.jpg';
 import { connect } from 'react-redux';
 import data from './datalifestyle';
+import { Link } from 'react-router-dom';
 
 const allCategories = ["all", ...new Set(data.map((p) => p.category))];
 function Lifestyle(props) {
@@ -113,7 +114,7 @@ function Lifestyle(props) {
                                             <input className={`form-control ${bgDarkLifeStyle}`} type="search" placeholder="Search" aria-label="Search"
                                                 value={searchItem} onChange={onChange}
                                             />
-                                            <button className={`btn btn-outline-secondary ${bgDarkLifeStyle} `} type="button"><i className="fa-solid fa-magnifying-glass"></i></button>
+                                            <Link to='/detail'><button onClick={() => onSearch(searchItem)} className={`btn btn-outline-secondary ${bgDarkLifeStyle} `} type="button"><i className="fa-solid fa-magnifying-glass"></i></button></Link>
                                         </form>
                                     </div>
                                     <div className="lifestyle-widget-nav  mt-md-5">
@@ -125,7 +126,7 @@ function Lifestyle(props) {
                                             ))}
 
                                         </ul>
-                                        <div className="show-item-search">
+                                        <div ref={refdropdown} className="show-item-search">
                                             {data
                                                 .filter((item) => {
                                                     const searchTerm = searchItem.toLowerCase();
@@ -139,7 +140,7 @@ function Lifestyle(props) {
                                                 .map((item) => (
 
                                                     <div className='item-show' key={item.id}>
-                                                        <p>{item.name}</p>
+                                                        <p onClick={() => onSearch(item.name)}>{item.name}</p>
                                                     </div>
 
                                                 ))}
@@ -169,12 +170,12 @@ function Lifestyle(props) {
                                     {menuItems.map((item) => (
                                         <div className='col-md-4' key={item.id}>
                                             <div className='lifestyle-item'>
-                                                <a href='#'><img src={item.img} alt='' className='img-lifestyle'></img></a>
+                                                <Link to='/detail'><img src={item.img} alt='' className='img-lifestyle'></img></Link>
                                                 <div className='lifestyle-item-title '>
-                                                    <a href='#' className={`lifestyle-item-category ${cateDarkLifeStyle}`}>{item.category}</a>
-                                                    <h3><a href='#' className={`color-underline stretched-link ${colorWhiteLifeStyle}`}>
+                                                    <Link to='/detail' className={`lifestyle-item-category ${cateDarkLifeStyle}`}>{item.category}</Link>
+                                                    <h3><Link to='/detail' className={`color-underline stretched-link ${colorWhiteLifeStyle}`}>
                                                         {item.name}
-                                                    </a></h3>
+                                                    </Link></h3>
                                                 </div>
                                                 <div className="lifestyle-item-meta">
                                                     <ul>
@@ -183,7 +184,7 @@ function Lifestyle(props) {
                                                 </div>
                                                 <div className="lifestyle-item-content mt-3">
                                                     <p className={`${colorLessWhiteLifeStyle}`}>{item.content}</p>
-                                                    <a href="#" className={`more-link ${colorWhiteLifeStyle}`}>{item.link}</a>
+                                                    <Link to='/detail' className={`more-link ${colorWhiteLifeStyle}`}>{item.link}</Link>
                                                 </div>
                                             </div>
                                         </div>
