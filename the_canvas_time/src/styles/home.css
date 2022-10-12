@@ -169,6 +169,7 @@
     line-height: 1.5;
     margin: 0 0 30px;
     color: #444;
+    font-family: 'Roboto', sans-serif;
 }
 
 .readingH_item {
@@ -320,11 +321,10 @@
     color: #444;
     font-weight: 600;
     line-height: 1.5;
-    margin: 0 0 30px;
 }
 
 .home-posts .item-post-home {
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 .home-posts .item-post-home:nth-child(n-2) {
@@ -374,6 +374,7 @@
     display: block;
     float: none;
     margin: 8px 0 0 !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .home-posts .item-post-home-date ul {
@@ -436,6 +437,79 @@
 
 .bg-dark-mode-home .home-posts .more-link-post-home i {
     color: #eee !important;
+}
+
+.post_entry_time {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-dark-mode-home .spotlight {
+    background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.spotlight #sl {
+    font-size: 30px;
+}
+
+.bg-dark-mode-home .spotlight #sl {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.bg-dark-mode-home .highlightHome h4 {
+    font-family: 'Roboto', sans-serif !important;
+
+}
+
+.bg-dark-mode-home .readingHistory #rhh3 {
+    color: #eee !important;
+}
+
+.readingHistory .post_entry_cate a {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.readingHistory .post_readingH {
+    margin-top: 25px;
+}
+
+.readingHistory .post_readingH p {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.bg-dark-mode-home .readingHistory .post_readingH {
+    color: rgba(255, 255, 255, .7) !important;
+}
+
+.bg-dark-mode-home .readingHistory .post_entry_title h3 .color-underline {
+    background-image: linear-gradient(rgba(111, 103, 103, 0.833), rgba(111, 103, 103, 0.833));
+}
+
+.theWeek #rhh4 {
+    font-size: 24px !important;
+}
+
+.bg-dark-mode-home .theWeek #rhh4 {
+    color: #eee !important;
+    font-family: 'Roboto', sans-serif !important;
+
+}
+
+.bg-dark-mode-home .theWeek #rhh3 {
+    color: #eee !important;
+}
+
+.bg-dark-mode-home .theWeek .post-entry-title h4 .color-underline {
+    color: #eee !important;
+    background-image: linear-gradient(rgba(111, 103, 103, 0.833), rgba(111, 103, 103, 0.833));
+}
+
+.bg-dark-mode-home .bannerHome {
+    background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.bg-dark-mode-home .bannerHome small {
+    color: #eee;
 }
 
 /* +++responsive++++ */

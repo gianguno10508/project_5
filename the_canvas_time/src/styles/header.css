@@ -38,6 +38,7 @@ button:not(:disabled) {
     text-decoration: none;
 }
 
+
 /* a little fix responsive */
 .header .header-row {
     padding-top: 15px;
@@ -233,13 +234,39 @@ button:not(:disabled) {
     border-bottom: 1px solid #e5e5e5;
     padding: 10px 0;
 }
-.search-box{
+
+.bg-dark-mode .menu {
+    border-color: rgba(255, 255, 255, .15) !important;
+}
+
+.bg-dark-mode.header.sticky-top.b-bottom {
+    border-bottom-color: rgba(255, 255, 255, .15) !important;
+}
+
+.bg-dark-mode .menu #navbarNav ul li a>div::after {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.bg-dark-mode .footer .widget>h4 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)) !important;
+}
+
+.bg-dark-mode .widget.widget_links .tagcloud a {
+    border-color: rgba(255, 255, 255, .15) !important;
+}
+
+.bg-dark-mode .widget.widget_links .tagcloud a:hover {
+    border-color: #F39887 !important;
+}
+
+.search-box {
     z-index: 100;
     background-color: rgb(241, 241, 241);
     /* border: 1px solid #444; */
 }
-.show_result_search{
-    display: flex ;
+
+.show_result_search {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
@@ -247,6 +274,7 @@ button:not(:disabled) {
     color: #222;
     z-index: 100;
 }
+
 /* .show_result_search .color-underline{
     background-image: linear-gradient(rgba(243, 152, 135, 0.3), rgba(243, 152, 135, 0.3));
     background-repeat: no-repeat;
@@ -258,27 +286,32 @@ button:not(:disabled) {
 .show_result_search:hover .color-underline {
     background-image: #F39887;
 }
-.show_result_search:hover{
+
+.show_result_search:hover {
     color: rgba(43, 43, 43, 0.596);
     background-color: rgb(212, 212, 212);
 }
-.show_result_search .img_show_result_search img{
+
+.show_result_search .img_show_result_search img {
     width: 100%;
     height: 100%;
 }
-.text_show_result_search h4{
+
+.text_show_result_search h4 {
     font-size: 20px;
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
     width: 152px;
     text-overflow: ellipsis;
     overflow: hidden;
     height: 40px;
-    line-height: 50px; 
+    line-height: 50px;
 }
-.text_show_result_search p{
+
+.text_show_result_search p {
     margin-bottom: 0;
 }
+
 @media only screen and (max-width:992px) {
     .header .menu #navbarNav ul li a {
         text-transform: uppercase;
