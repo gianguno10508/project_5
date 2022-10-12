@@ -4,10 +4,10 @@ import img from '../../img/1.jpg';
 import { connect } from 'react-redux';
 import data from './datalifestyle';
 import { Link } from 'react-router-dom';
-
+import { actLifeStyle } from '../../actions';
 const allCategories = ["all", ...new Set(data.map((p) => p.category))];
 function Lifestyle(props) {
-    // console.log(data);
+    // console.log(props.datalifestyle);
     // +++DArKMODE++
     const [bgDarkLifeStyle, setbgDarkLifeStyle] = useState(null);
     const [bgLessDarkLifeStyle, setbgLessDarkLifeStyle] = useState(null);
@@ -88,12 +88,13 @@ function Lifestyle(props) {
         if(event.target.value.length > 0){
             data.filter((item) => {
                 const searchValue = event.target.value.toLowerCase();
+                console.log(searchValue)
                 const searchData = item.name.toLowerCase();
                 return (searchValue && searchData.startsWith(searchValue) && searchData !== searchValue);
                     
             }).map((item,index)=>{
                 newItems[index] = item;
-            });
+                });
             setMenuItems(newItems);
         }else{
             setMenuItems(data);
@@ -103,6 +104,11 @@ function Lifestyle(props) {
         setsearchItem(searchTerm);
         console.log(searchTerm);
     }
+
+    useEffect(()=>{
+        props.dispatchLifeStyle(data);
+    },[])
+    
     return (
         <div className={`${bgDarkLifeStyle} lifestyle-list `}>
             {/* +++FISTtitle++ */}
@@ -204,7 +210,7 @@ function Lifestyle(props) {
                                             </div>
                                         </div>
                                     )) : 
-                                    <h3>Sorry, We don't have your search blog</h3>}
+                                    <h4>Sorry, We don't have your search blog</h4>}
                                 </div>
                             </div>
                         </div>
@@ -239,14 +245,18 @@ function Lifestyle(props) {
     );
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//     };
-// };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchLifeStyle:(data)=>{
+            dispatch(actLifeStyle(data))
+        }
+    };
+};
 const mapStateToProps = (state, ownProps) => {
     // console.log(state);
     return {
-        darkmode: state.darkmode
+        darkmode: state.darkmode,
+        
     };
 }
-export default connect(mapStateToProps)(Lifestyle);
+export default connect(mapStateToProps,mapDispatchToProps)(Lifestyle);
