@@ -1,3 +1,4 @@
+export const GET_DATA_LIFE_STYLE = 'GET_DATA_LIFE_STYLE';
 
 export const actSelectDarkMode = (data) => {
   return {
@@ -6,9 +7,9 @@ export const actSelectDarkMode = (data) => {
   };
 };
 
-// export const actEntryData =(data) =>{
-//   return{
-//     type:'GET_DATA_ENTRY_DETAI',
-//     data,
-//   }
-// }
+export const actLifeStyle = (data) =>{
+  return{
+    type:GET_DATA_LIFE_STYLE,
+    data,
+  }
+}

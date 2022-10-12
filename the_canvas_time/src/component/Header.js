@@ -7,6 +7,7 @@ import ThaFlag from '../img/tha_flag.png';
 import { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { actSelectDarkMode } from "../actions";
+
 function Header(props) {
     const current = new Date();
     const date = `${current.getDate()}`;
@@ -36,6 +37,8 @@ function Header(props) {
     const [darkMode, setDarkMode] = useState('disblock');
     const [unDarkMode, setUnDarkMode] = useState('disnone');
     const [colorWhite, setColorWhite] = useState(null);
+    // thanh
+    const [showNewSearch, setNewShowSearch] = useState([])
     const handleItemClick = (event) => {
         if (darkMode == 'disblock' && unDarkMode == 'disnone') {
             setDarkMode('disnone');
@@ -108,6 +111,8 @@ function Header(props) {
     };
     const handleClickOutside = () => {
         setShowSearch('disnone');
+        setNewShowSearch([]);
+        console.log("tét")
     };
     const [showSearch, setShowSearch] = useState('disnone');
     const handleItemClickSearch = (event) => {
@@ -130,7 +135,6 @@ function Header(props) {
             event.stopPropagation();
         }
     };
-
     const useOutsideClickMenu = (callback) => {
         const refdrm = useRef();
 
@@ -152,10 +156,30 @@ function Header(props) {
     };
     const handleClickOutsideMenu = () => {
         setShowMenu('disnone');
+        
     };
     const refdrmenu = useOutsideClickMenu(handleClickOutsideMenu);
 
+    console.log(props.datalifeStyle)
+    
 
+    const handleSearchHeader=(event)=>{
+        // console.log(event.target.value)
+        const newShowSearch=[];
+        if(event.target.value.length > 0){
+            props.datalifeStyle.filter((item) => {
+                // const valueInput = item.targets.value.toLowerCase();
+                const searchDataHeader = item.category.toLowerCase();
+                console.log(searchDataHeader)
+                return searchDataHeader 
+            }).map((item,i)=>{
+                newShowSearch[i] = item;
+            });
+            setNewShowSearch(newShowSearch);
+        }else{
+            setNewShowSearch([])
+        }
+    }
     return (
         <header className={`header sticky-top ${bgDark} ${border}`}>
             <div className="container">
@@ -197,7 +221,26 @@ function Header(props) {
                         <div className={`top-search ${colorWhite}`} >
                             <i class="fa-solid fa-magnifying-glass" onClick={handleItemClickSearch}></i>
                             <div ref={ref} className={`search-box ${showSearch}`}>
-                                <input type='text' placeholder="Search here..." />
+                                <input type='text' placeholder="Search here..."  onChange={handleSearchHeader}/>
+                                <div className="box_result">
+                                    {showNewSearch.length > 0 ?
+                                        showNewSearch.map((item,i)=>(
+                                        <Link to='/detail' key={i}>
+                                            <div className="show_result_search text-start row">
+                                                <div className="col-4 img_show_result_search">
+                                                    <img src={item.img} alt=''/>
+                                                </div>
+                                                <div className="text_show_result_search col-8">
+                                                    <h4 className="color-underline">{item.name}</h4>
+                                                    <p>{item.category}</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                        )).slice(0,3)
+                                    :
+                                    <h3>Search Now</h3>
+                                    }
+                                </div>      
                             </div>
                         </div>
                         <div className="dark-mode" onClick={(event) => handleItemClick(event)}>
@@ -262,7 +305,9 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 const mapStateToProps = (state, ownProps) => {
+    console.log(state)
     return {
+        datalifeStyle: state.dataLifeStyle
     };
 };
 
