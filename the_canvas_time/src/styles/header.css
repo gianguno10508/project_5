@@ -38,6 +38,7 @@ button:not(:disabled) {
     text-decoration: none;
 }
 
+
 /* a little fix responsive */
 .header .header-row {
     padding-top: 15px;
@@ -232,6 +233,30 @@ button:not(:disabled) {
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
     padding: 10px 0;
+}
+
+.bg-dark-mode .menu {
+    border-color: rgba(255, 255, 255, .15) !important;
+}
+
+.bg-dark-mode.header.sticky-top.b-bottom {
+    border-bottom-color: rgba(255, 255, 255, .15) !important;
+}
+
+.bg-dark-mode .menu #navbarNav ul li a>div::after {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.bg-dark-mode .footer .widget>h4 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)) !important;
+}
+
+.bg-dark-mode .widget.widget_links .tagcloud a {
+    border-color: rgba(255, 255, 255, .15) !important;
+}
+
+.bg-dark-mode .widget.widget_links .tagcloud a:hover {
+    border-color: #F39887 !important;
 }
 
 @media only screen and (max-width:992px) {

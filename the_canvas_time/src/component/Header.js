@@ -157,7 +157,7 @@ function Header(props) {
 
 
     return (
-        <header className={`header sticky-top ${bgDark} ${border}`}>
+        <header className={`${bgDark} header sticky-top ${border}`}>
             <div className="container">
                 <div className="header-row d-flex justify-content-lg-between">
                     <div className="socical-icon col-lg-3 d-md-flex px-0 align-items-center">
@@ -195,17 +195,17 @@ function Header(props) {
                             </div>
                         </div>
                         <div className={`top-search ${colorWhite}`} >
-                            <i class="fa-solid fa-magnifying-glass" onClick={handleItemClickSearch}></i>
+                            <i className="fa-solid fa-magnifying-glass" onClick={handleItemClickSearch}></i>
                             <div ref={ref} className={`search-box ${showSearch}`}>
                                 <input type='text' placeholder="Search here..." />
                             </div>
                         </div>
                         <div className="dark-mode" onClick={(event) => handleItemClick(event)}>
                             <span className={`dark-icon ${darkMode} ${colorWhite}`}>
-                                <i class="fa-solid fa-moon"></i>
+                                <i className="fa-solid fa-moon"></i>
                             </span>
                             <span className={`white-icon ${unDarkMode} ${colorWhite}`}>
-                                <i class="fa-regular fa-sun"></i>
+                                <i className="fa-regular fa-sun"></i>
                             </span>
                         </div>
                     </div>
