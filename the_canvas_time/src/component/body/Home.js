@@ -37,11 +37,10 @@ function Home(props) {
                 <AnimationOnScroll animateIn="animate__bounceIn">
                     <LatesVideo />
                 </AnimationOnScroll>
-
             </div>
-            <SpotLight />
-            <BasedOn />
-            <BannerHome />
+            <SpotLight bgDarkHome={bgDarkHome} />
+            <BasedOn bgDarkHome={bgDarkHome} />
+            <BannerHome bgDarkHome={bgDarkHome} />
             <PostEndHome bgDarkHome={bgDarkHome} />
         </div>
     );

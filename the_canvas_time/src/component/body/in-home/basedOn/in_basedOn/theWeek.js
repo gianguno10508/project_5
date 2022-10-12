@@ -1,38 +1,38 @@
 import React from 'react';
 import { EmbeddedPost, FacebookProvider, Like } from 'react-facebook';
-function TheWeek(){
-    const data=[
+function TheWeek({ bgDarkHome }) {
+    const data = [
         {
-            numberL:'01.',
-            titleL:'The Best Destinations in Asia for Solo Travel',
-            day:'Mar 11, 2016'
+            numberL: '01.',
+            titleL: 'The Best Destinations in Asia for Solo Travel',
+            day: 'Mar 11, 2016'
         },
         {
-            numberL:'02.',
-            titleL:'The Best Destinations in Asia for Solo Travel',
-            day:'Mar 11, 2016'
+            numberL: '02.',
+            titleL: 'The Best Destinations in Asia for Solo Travel',
+            day: 'Mar 11, 2016'
         },
         {
-            numberL:'03.',
-            titleL:'The Best Destinations in Asia for Solo Travel',
-            day:'Mar 11, 2016'
+            numberL: '03.',
+            titleL: 'The Best Destinations in Asia for Solo Travel',
+            day: 'Mar 11, 2016'
         },
         {
-            numberL:'04.',
-            titleL:'The Best Destinations in Asia for Solo Travel',
-            day:'Mar 11, 2016'
+            numberL: '04.',
+            titleL: 'The Best Destinations in Asia for Solo Travel',
+            day: 'Mar 11, 2016'
         },
         {
-            numberL:'05.',
-            titleL:'The Best Destinations in Asia for Solo Travel',
-            day:'Mar 11, 2016'
+            numberL: '05.',
+            titleL: 'The Best Destinations in Asia for Solo Travel',
+            day: 'Mar 11, 2016'
         },
     ]
-    return(
-        <div className='theWeek text-start col-lg-4 mt-5 mt-lg-0 position-sticky h-100'>
+    return (
+        <div className={`${bgDarkHome} theWeek text-start col-lg-4 mt-5 mt-lg-0 position-sticky h-100`}>
             <h3 id='rhh4'>This Week</h3>
             <ul className='week-posts posts-sm row col-mb-30'>
-                {data.map((v,i)=>(
+                {data.map((v, i) => (
                     <li className='col-12 weeks-item' key={i}>
                         <div className='row'>
                             <div className='col-1 numberL'>

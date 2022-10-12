@@ -245,6 +245,7 @@
     letter-spacing: 1px;
     margin-bottom: 10px;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .lifestyle-content-list .lifestyle-item-title h3 {
@@ -259,6 +260,7 @@
     font-weight: 500px;
     color: #222;
     text-decoration: none;
+
 }
 
 .lifestyle-content-list .color-underline {
@@ -268,6 +270,10 @@
     background-position: 0 82%;
     padding: 0 2px 2px 0;
     transition: background .6s cubic-bezier(.19, 1, .22, 1);
+}
+
+.bg-dark-mode-lifestyle .lifestyle-content-list .color-underline {
+    background-image: linear-gradient(rgba(111, 103, 103, 0.833), rgba(111, 103, 103, 0.833)) !important;
 }
 
 .lifestyle-content-list .color-underline:hover {
@@ -300,6 +306,7 @@
     font-size: 90%;
     margin: 0 15px 10px 0;
     color: #999;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .lifestyle-content-list .lifestyle-item-content {
@@ -311,6 +318,7 @@
     font-size: 15px;
     line-height: 22px !important;
     margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .bg-dark-mode-lifestyle .more-link {
